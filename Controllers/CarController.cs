@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+//Importar el espacio de nombre de donde se encuentra el contexto de la Base de Datos.
+using ParcialComputo3.Data;
 using ParcialComputo3.Models;
 
 namespace ParcialComputo3.Controllers

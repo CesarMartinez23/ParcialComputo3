@@ -26,6 +26,10 @@ namespace ParcialComputo3
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Inicia Contexto de la BD
+            services.AddDbContext<DatabaseContext>(options=>
+            options.UseNpgsql(Configuration.GetConnectionString("DatabaseContext")));
+            //Termina Contexto DB
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
