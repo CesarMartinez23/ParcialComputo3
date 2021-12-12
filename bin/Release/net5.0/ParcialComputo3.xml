@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ParcialComputo3</name>
+    </assembly>
+    <members>
+        <member name="T:ParcialComputo3.Controllers.BrandController">
+            <summary>
+            Definiendo que sera un Controlador para API llamado Brand, igual que el controlador.
+            </summary>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.BrandController.GetBrands">
+            <summary>
+            Definicion del Primer Verbo HTTP a utilizar (HttpGet) (Obteniendo las Marcas registradas en la API).
+            </summary>
+            <remarks>
+            Con este verbo HTTP obtendremos el resultado del objeto, los datos de las Marcas registradas en nuestra API.
+            </remarks>
+            <response code="200">Registros de Marcas, encontrados correctamente.</response>
+             <response code="404">NOT FOUND. No se han podido encontrar las Marcas registradas en esta API.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.BrandController.GetBrandsByID(System.Int32)">
+            <summary>
+            Definicion del Verbo HTTP a utilizar (HttpGet) (Obteniendo los registros del ID de Marca solicitada).
+            </summary>
+            <remarks>
+            Con este verbo HTTP obtendremos el resultado del objeto, los datos de la Marcas solicitada mediante el ID de Marca en nuestra API.
+            </remarks>
+            <param name="id">(ID) Identificador de la Marca.</param>
+            <response code="200">Registro de la Marca, encontrado correctamente.</response>
+            <response code="404">NOT FOUND. No se ha podido encontrar la Marca solicitada mediante el ID de la Marca en esta API.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.BrandController.PostBrand(ParcialComputo3.Models.Brand)">
+            <summary>
+            Definicion del Segundo Verbo HTTP a utilizar (HttpPost) (Creando un nuevo objeto, una nueva Marca en la base de datos de la API).
+            </summary>
+            <remarks>
+            Con este verbo HTTP crearemos un nuevo objeto osea un nuevo registro de una Marca en nuestra base de Datos de la API.
+            </remarks>
+            <param name="brand">Objeto : Marca a crear en los registros de la base de datos de la API.</param>             
+            <response code="201">Created. Nueva Marca registrada correctamente en la Base de Datos de la API.</response>        
+            <response code="400">BadRequest. No se ha podido registrar la Marca en la Base de Datos de la API. Formato del registro incorrecto.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.BrandController.PutBrand(System.Int32,ParcialComputo3.Models.Brand)">
+            <summary>
+            Definicion del Tercer Verbo HTTP a utilizar (HttpPut) (Actualizando un objeto o registro ya existente en la base de datos de la API, mediante el ID de la Marca).
+            </summary>
+            <remarks>
+            Con este verbo HTTP actualizaremos un registro osea un objeto, que en este caso es una Marca ya existente en nuestra base de Datos de la API.
+            El funcionamiento de este verbo es solicitar mediante un ID de la Marca que querramos modificar, por lo cual debemos ingresar el identidicador de esta, para que el verbo devuelva el objeto con los datos que se le habian asignado a este cuando se registro en la BD por primera vez.
+            </remarks>
+            <param name="id">(ID) Identificador de la Marca.</param>
+            <param name="brand">Objeto o Registro a Actualizar.</param>
+            <response code="201">Update. La Marca se a actualizado correctamente en la Base de Datos de la API.</response>        
+            <response code="400">BadRequest. No se ha podido actualizar los registros de la Marca en la Base de Datos de la API. Formato del registro incorrecto.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.BrandController.DeleteBrand(System.Int32)">
+            <summary>
+            Definicion del Cuarto Verbo HTTP a utilizar (HttpDelete) (Eliminando un objeto o registro ya existente de una Marca en la base de datos de la API, mediante el ID de una Marca).
+            </summary>
+            <remarks>
+            Con este verbo HTTP eliminaremos un registro osea un objeto, que en este caso es una Marca ya existente en nuestra base de Datos de la API.
+            El funcionamiento de este verbo es solicitar mediante un ID de una Marca que querramos eliminar, por lo cual debemos ingresar el identidicador de esta, para que el verbo busque el objeto con los datos que se le habian asignado a este cuando se registro en la Base de Datos y los elimine de manera satisfactoria.
+            </remarks>
+            <param name="id">(ID) Identificador de una Marca.</param>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.BrandController.BrandExists(System.Int32)">
+            <summary>
+            Metodo Booleano para saber si existe o no una Marca en los registros de la base de datos de la API, si existe devuelve una respuesta Verdadero o Falso (True or False).
+            </summary>
+            <param name="id">(ID) Identificador de una Marca.</param>
+            <returns></returns>
+        </member>
+        <member name="T:ParcialComputo3.Controllers.CarController">
+            <summary>
+            Definiendo que sera un Controlador para API llamado Brand, igual que el controlador.
+            </summary>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.CarController.GetCars">
+            <summary>
+            Definicion del Primer Verbo HTTP a utilizar (HttpGet) (Obteniendo los Vehiculos registrados en la API).
+            </summary>
+            <remarks>
+            Con este verbo HTTP obtendremos el resultado de todos los datos de los Vehiculos registrados en nuestra API.
+            </remarks>
+            <response code="200">Registros de Vehiculos, encontrados correctamente.</response>
+             <response code="404">NOT FOUND. No se han podido encontrar los Vehiculos registrados en esta API.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.CarController.GetCarsByID(System.Int32)">
+            <summary>
+            Definicion del Verbo HTTP a utilizar (HttpGet) (Obteniendo los registros del ID de Vehiculo solicitado).
+            </summary>
+            <remarks>
+            Con este verbo HTTP obtendremos el resultado del ID del Vehiculo que ingresemos en la peticion.
+            </remarks>
+            <param name="id">(ID) Identificador del Vehiculo.</param>
+            <response code="200">Registro del Vehiculo, encontrado correctamente.</response>
+            <response code="404">NOT FOUND. No se ha podido encontrar el Vehiculo registrado en esta API.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.CarController.PostCar(ParcialComputo3.Models.Car)">
+            <summary>
+            Definicion del Segundo Verbo HTTP a utilizar (HttpPost) (Creando un nuevo objeto, un nuevo Vehiculo en la base de datos de la API).
+            </summary>
+            <remarks>
+            Con este verbo HTTP crearemos un nuevo objeto osea un nuevo registro de un Vehiculo en nuestra base de Datos de la API.
+            </remarks>
+            <param name="car">Objeto a crear en los registros de la base de datos de la API.</param>             
+            <response code="201">Created. Nuevo Vehiculo registrado correctamente en la Base de Datos de la API.</response>        
+            <response code="400">BadRequest. No se ha podido registrar el vehiculo en la Base de Datos de la API. Formato del registro incorrecto.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.CarController.PutCar(System.Int32,ParcialComputo3.Models.Car)">
+            <summary>
+            Definicion del Tercer Verbo HTTP a utilizar (HttpPut) (Actualizando un objeto o registro ya existente en la base de datos de la API, mediante el ID del Vehiculo).
+            </summary>
+            <remarks>
+            Con este verbo HTTP actualizaremos un registro osea un objeto, que en este caso es un vehiculo ya existente en nuestra base de Datos de la API.
+            El funcionamiento de este verbo es solicitar mediante un ID del vehiculo que querramos modificar, por lo cual debemos ingresar el identidicador de este, para que el verbo devuelva el objeto con los datos que se le habian asignado a este cuando se registro en la BD por primera vez.
+            </remarks>
+            <param name="id">(ID) Identificador del Vehiculo.</param>
+            <param name="car">Objeto o Registro a Actualizar.</param>
+            <response code="201">Update. Vehiculo actualizado correctamente en la Base de Datos de la API.</response>        
+            <response code="400">BadRequest. No se ha podido actualizar el vehiculo en la Base de Datos de la API. Formato del registro incorrecto.</response>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.CarController.DeleteCar(System.Int32)">
+            <summary>
+            Definicion del Cuarto Verbo HTTP a utilizar (HttpDelete) (Eliminando un objeto o registro ya existente en la base de datos de la API, mediante el ID del Vehiculo).
+            </summary>
+            <remarks>
+            Con este verbo HTTP eliminaremos un registro osea un objeto, que en este caso es un vehiculo ya existente en nuestra base de Datos de la API.
+            El funcionamiento de este verbo es solicitar mediante un ID del vehiculo que querramos eliminar, por lo cual debemos ingresar el identidicador de este, para que el verbo busque el objeto con los datos que se le habian asignado a este cuando se registro en la BD y los elimine de manera satisfactoria.
+            </remarks>
+            <param name="id">(ID) Identificador del Vehiculo.</param>
+        </member>
+        <member name="M:ParcialComputo3.Controllers.CarController.CarExists(System.Int32)">
+            <summary>
+            Metodo Booleano para saber si existe o no un Vehiculo en los registros de la Base de Datos de la API, si existe devuelve una respuesta Verdadero o Falso (True or False).
+            </summary>
+            <param name="id">(ID) Identificador del Vehiculo.</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
